@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const RefExample = () => {
+  const ref = useRef(null)
+  
+  const handleScroll = () => {
+    console.log(ref)
+    if(!ref || ref.current) {
+      return ref.current.scrollIntoView({ behavior: "smooth", block: "center"})
+    }
+  }
+
   return (
-    <div>
-      <h2>Use RefContainer</h2>
-    </div>
+    <>
+      <h1>Use Ref</h1>
+      <div className="my-5 mx-auto" style={{ height: "100vh" }}>
+        <button className="btn btn-info" onClick={handleScroll}>Scroll</button>
+      </div>
+
+      <div style={{ height: "100vh" }}></div>
+
+      <h2 ref={ref}>Testo Testo</h2>
+      <div style={{ height: "30vh" }}></div>
+    </>
   );
 };
 

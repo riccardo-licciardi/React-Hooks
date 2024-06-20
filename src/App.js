@@ -1,4 +1,4 @@
-import Inizio from "./lezioni/13-useCallBack/risultato/index";
+import Inizio from "./lezioni/6-useReducer/inizio";
 
 function App() {
   return (
